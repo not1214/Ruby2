@@ -1,5 +1,4 @@
 def fizz_buzz(num)
-
   if num % 15 == 0
     puts "Fizzbuzz"
   elsif num % 3 == 0
@@ -9,7 +8,6 @@ def fizz_buzz(num)
   else
     num
   end
-
 end
 
 puts "数値を入力してください。"
