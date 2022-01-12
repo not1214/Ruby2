@@ -6,5 +6,6 @@ while i <= 10 do
   end
 
   puts i
+  # i = i+1
   i += 1
 end
