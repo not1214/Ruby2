@@ -102,28 +102,22 @@
 #   puts "Correct"
 # end
 
-n = gets.to_i
-cnt = {}
-n.times do |i|
-  cnt[i+1] = 0
-end
+line = readlines.map(&:chomp)
+N = line.first.to_i
+# p N
+days = line.drop(1)
+# p days
  
-n.times do |i|
-  a = gets.to_i
-  cnt[a] += 1
-end
  
-ans = [0,0]
-n.times do |i|
-  if cnt[i+1] == 0
-    ans[-1] = i + 1
-  elsif cnt[i+1] == 2
-    ans[0] = i + 1
+for i in 0..N-1 do
+  if i == N-1
+    next
   end
-end
- 
-if ans == [-1,-1]
-  puts 'Correct'
-else
-  puts ans.join(' ')
+  if days[i+1].to_i == days[i].to_i
+    puts "stay"
+  elsif days[i+1].to_i > days[i].to_i
+    puts "up" + " #{days[i+1].to_i-days[i].to_i}"
+  elsif days[i+1].to_i < days[i].to_i
+    puts "down" + " #{days[i].to_i-days[i+1].to_i}"
+  end
 end
